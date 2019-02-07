@@ -25,7 +25,6 @@ for id in ids:
     print(id, count)
     driver.get("https://www.wynikinazywo.pl/mecz/" + str(id) + "/#h2h;overall")
 
-
     try:
         button = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, 'show_more')))
     except TimeoutException:
