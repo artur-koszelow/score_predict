@@ -8,7 +8,7 @@ import csv
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
 
-chromedriver = "/users/arturkoszelow/PycharmProjects/lamacz/chromedriver"
+chromedriver = "/users/arturkoszelow/PycharmProjects/score_predict/chromedriver"
 driver = webdriver.Chrome(chromedriver, chrome_options=option)
 driver.get("https://www.wynikinazywo.pl/")
 
@@ -51,7 +51,3 @@ with open('links.csv', 'w', newline='') as links:
 
 print('Thats all')
 driver.quit()
-
-'''
-comment
-'''
