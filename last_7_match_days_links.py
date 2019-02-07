@@ -1,7 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,7 +20,7 @@ with open('links_copy.csv', 'r') as csv_file:
 
 print(len(ids))
 
-for _ in range(5):
+for _ in range(7):
 
     dzien = driver.find_element_by_xpath('//*[@id="ifmenu-calendar"]/span[1]')
     dzien.click()
