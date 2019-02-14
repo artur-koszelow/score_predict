@@ -18,8 +18,7 @@ count = 0
 links_dome = set()
 new_links = set()
 pre_links = {'4AKMDdCj', 'SjbfGrft', 'fJmhNh17', '67CTSQzJ', 'QeqfZUHt'}
-while True:
-    print(pre_links)
+while len(pre_links) > 1:
 
     for link_x in pre_links:
         driver.get("https://www.wynikinazywo.pl/mecz/" + str(link_x) + "/#h2h;overall")
@@ -51,9 +50,4 @@ while True:
     pre_links.update(new_links)
     print('pre links', str(len(pre_links)))
 
-
-
-
-
-print(links_dome)
 driver.close()
