@@ -47,7 +47,7 @@ while len(pre_links) > 1:
         print('new links', str(len(new_links)), now-then, 'sec', count)
         links_dome.update([link_x])
 
-    pre_links.update(new_links)
+    pre_links = new_links.difference(links_dome)
     print('pre links', str(len(pre_links)))
 
 driver.close()
