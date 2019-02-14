@@ -5,3 +5,4 @@ links_copy.csv
 links_copy2.csv
 chromedriver
 geckodriver.log
+__pycache__/
