@@ -3,6 +3,9 @@
 links.csv
 links_copy.csv
 links_copy2.csv
+links.json
+links_copy.json
+test_scipy.py
 chromedriver
 geckodriver.log
 __pycache__/
