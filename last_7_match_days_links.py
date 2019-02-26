@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import csv
+import json
 
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
@@ -13,14 +14,14 @@ driver = webdriver.Chrome(chromedriver, chrome_options=option)
 driver.get("https://www.wynikinazywo.pl/")
 
 ids = set()
-with open('links_copy.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-    for i in csv_reader:
-        ids.update(i)
-
+with open('links.json', 'r') as json_file:
+    json_list = json_file.read()
+    pre_links_list = json.loads(json_list)
+    for i in pre_links_list:
+        ids.add(i)
 print(len(ids))
 
-for _ in range(7):
+for _ in range(1):
 
     dzien = driver.find_element_by_xpath('//*[@id="ifmenu-calendar"]/span[1]')
     dzien.click()
@@ -43,10 +44,11 @@ for _ in range(7):
     print(len(ids))
 
 ids_list = list(ids)
-with open('links.csv', 'w', newline='') as links:
-    writer = csv.writer(links)
-    for i in range(len(ids_list)):
-        writer.writerow([ids_list[i]])
+
+js_list = json.dumps(ids_list)
+
+with open('links_copy.json', 'w') as links:
+    links.write(js_list)
     links.close()
 
 print('Thats all')
