@@ -1,18 +1,10 @@
 import json
+from pandas import DataFrame
 
-
-with open('test.json', 'r') as test_js:
+with open('matches.json', 'r') as test_js:
     j_data = test_js.read()
 
 data = json.loads(j_data)
+df = DataFrame(data)
 
-data['Imiona'].append('dupa')
-data['nazwiska'].append('cipa')
-print(data)
-
-# data2 = json.dumps(data)
-
-with open('test.json', 'w') as test_js:
-    test_js.write(data)
-
-test_js.close()
+print(df)

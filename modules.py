@@ -26,3 +26,10 @@ def wait4xpath(driver, xpath: str):
     except TimeoutException:
         print('xpath {} load too long'.format(xpath))
         pass
+
+def wait4class(driver, class_name: str):
+    try:
+        WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.CLASS_NAME, class_name)))
+    except TimeoutException:
+        print('xpath {} load too long'.format(class_name))
+        pass
