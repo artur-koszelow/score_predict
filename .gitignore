@@ -1,10 +1,9 @@
 .DS_store
 .idea/
-links.csv
-links_copy.csv
-links_copy2.csv
 links.json
 links_copy.json
+matches.json
+matches_copy.json
 test_scipy.py
 chromedriver
 geckodriver.log
