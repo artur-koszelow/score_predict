@@ -1,10 +1,15 @@
 .DS_store
 .idea/
+chromedriver
+clear_df.pkl
 links.json
 links_copy.json
 matches.json
 matches_copy.json
+all_match_links.py
+breaks_search.py
+last_7_match_days_links.py
+modules.py
 test_scipy.py
-chromedriver
 geckodriver.log
 __pycache__/

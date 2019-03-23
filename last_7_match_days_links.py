@@ -21,7 +21,7 @@ with open('links.json', 'r') as json_file:
         ids.add(i)
 print(len(ids))
 
-for _ in range(1):
+for _ in range(7):
 
     dzien = driver.find_element_by_xpath('//*[@id="ifmenu-calendar"]/span[1]')
     dzien.click()

@@ -1,13 +1,22 @@
 import json
-from pandas import DataFrame
+import pandas as pd
 
 with open('matches.json', 'r') as test_js:
     j_data = test_js.read()
 
-    data = json.loads(j_data)
-df = DataFrame(data)
+df = pd.read_json(j_data)
 
-print(df)
+hosts = pd.get_dummies(df['host'])
+guests = pd.get_dummies(df['guest'])
+
+comps_dummies = hosts.add(guests, fill_value=0).astype('uint8')
+
+
+with open('comps_dummies.json', 'w') as json_file:
+    json_file.write(comps_js)
+json_file.close()
+
+# print(df)
 # data2 = json.dumps(data)
 #
 # with open('matches_test.json', 'w') as json_file:
